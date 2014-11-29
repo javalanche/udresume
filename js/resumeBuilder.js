@@ -1,3 +1,9 @@
+function displayHeader(){
+    var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+    $('#header').prepend(formattedRole);
+    var formattedName = HTMLheaderName.replace("%data%", bio.name);
+    $('#header').prepend(formattedName);
+}
 function displayWork(){
     for (job in work.jobs){
 	$("#workExperience").append(HTMLworkStart);
@@ -43,10 +49,6 @@ var bio = {
     "skills" : skills,
     "bioPic" : "images/javierFragaLinkedInPhoto.jpg"
 };
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-$('#header').prepend(formattedRole);
-$('#header').prepend(formattedName);
 console.log(bio.name);
 console.log(bio.age);
 var newEmail = bio.contacts.email.replace('gmail', 'att');
@@ -131,8 +133,9 @@ projects.display = function(){
 	}
     }
 }
+displayHeader();
 displayWork();
-display();
+//display();
 
 $(document).click(function(loc){
 	var x = loc.pageX;
