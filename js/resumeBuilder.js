@@ -1,25 +1,28 @@
-//$('#header').append('Javier Fraga');
-//$('#main').append('Javier Fraga');
-//$("#main").append("Javier Fraga");
+function displayWork(){
+    for (job in work.jobs){
+	$("#workExperience").append(HTMLworkStart);
 
-var firstName = 'Javier';
-var age = 32;
-var awesomeThoughts = 'I am ' + firstName + ' and I am awesome';
-console.log(firstName);
-console.log(age);
-console.log(awesomeThoughts);
+	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+	var formattedEmployerTitle = formattedEmployer + formattedTitle;
+	$(".work-entry:last").append(formattedEmployerTitle);
 
-var email = 'javier.s.fraga@att.com';
-var newEmail = email.replace('att', 'gmail');
-console.log(email);
-console.log(newEmail);
+	var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+	$(".work-entry:last").append(formattedDates);
 
-var name = 'Javier Fraga';
-var role = 'Developer';
-var formattedName = HTMLheaderName.replace("%data%", name);
-var formattedRole = HTMLheaderRole.replace("%data%", role);
-$('#header').prepend(formattedRole);
-$('#header').prepend(formattedName);
+	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+	$(".work-entry:last").append(formattedDescription);
+    }
+}
+function inName(){
+    name.name.trim().split(" ");
+    console.log(name);
+    name[1] = name[1].toUpperCase();
+    name[0] = name[0].splice(0,1).toUpperCase() + name[0].splice(1).toLowerCase();
+
+    return name[0] + " " + name[1];
+}
+$('#main').append(internationalizeButton);
 
 var skills = ['awesomeness' , 'programming' , 'teaching' , 'JS'];
 //$('#main').append(skills);
@@ -27,7 +30,8 @@ var skills = ['awesomeness' , 'programming' , 'teaching' , 'JS'];
 
 var bio = {
     "name" : "Javier Fraga",
-    "role" : "Developer / Scrum Master",
+    "age" : 32,
+    "role" : "Developer (SW), Scrum Master, Project Manager",
     "contacts" : {
 	"mobile" : "+1 415 952 7314",
 	"email" : "javier.s.fraga@gmail.com",
@@ -39,22 +43,36 @@ var bio = {
     "skills" : skills,
     "bioPic" : "images/javierFragaLinkedInPhoto.jpg"
 };
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+$('#header').prepend(formattedRole);
+$('#header').prepend(formattedName);
+console.log(bio.name);
+console.log(bio.age);
+var newEmail = bio.contacts.email.replace('gmail', 'att');
+console.log(bio.contacts.email);
+console.log(newEmail);
 //var work = {};
 //work.position = "Developer / Project Manager";
 //work.employer = "AT&T";
 //work.years = 0.5;
+//$("#main").append(bio.name);
+//$("#main").append(work["position"]);
+//$("#main").append(education.name);
 var work = {
     "jobs" : [
     {
 	"employer" : "AT&T",
-	"position" : "Project Manager / Scrum Master / Developer",
+	"title" : "Developer (SW), Scrum Master, Project Manager",
 	"dates" : "2014 - present",
+	"location" : "Dallas, TX, USA",
 	"description" : "fulltime employee working as an internal consultant in various projects in Responsive Web Design, API realization, and Cloud serving various roles as Project Manager, Scrum Master, and Developer"
     },
     {
 	"employer" : "Intel Corporation",
-	"position" : "Component Design Engineer",
+	"title" : "Component Design Engineer (HW)",
 	"dates" : "2005 - 2011",
+	"location" : "Folsom, CA, USA",
 	"description" : "fulltime employee designing graphics processor units (GPU), specializing in Low-Power Digital Design" 
     }
 	]
@@ -78,10 +96,47 @@ var education = {
 	    }
 	]
 };
-//$("#main").append(bio.name);
-//$("#main").append(work["position"]);
-//$("#main").append(education.name);
 
-//for (job in work.jobs){
-//    $("#workExperience").append(HTMLworkStart);
+var projects = {
+    "projects" : [
+	{
+	    "title" : "Sample Project 1",
+	    "dates" : 2014,
+	    "description" : "bla bla blah",
+	    "images" : [
+		"images/cristina3.jpg",
+	    "images/cristina5.jpg"
+		]
+	}
+    ]
 }
+projects.display = function(){
+    for (project in projects.projects){
+	$("#projects").append(HTMLprojectStart);
+
+	var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+	$(".project-entry:last").append(formattedTitle);
+
+	var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+	$(".project-entry:last").append(formattedDates);
+
+	var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+	$(".project-entry:last").append(formattedDescription);
+
+	if (projects.projects[project].images.length > 0){
+	    for (image in projects.projects[project].images){
+		var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+		$(".project-entry:last").append(formattedImage);
+	    }
+	}
+    }
+}
+displayWork();
+display();
+
+$(document).click(function(loc){
+	var x = loc.pageX;
+	var y = loc.pageY;
+
+	logClicks(x,y);
+});
