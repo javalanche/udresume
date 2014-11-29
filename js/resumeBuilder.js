@@ -21,6 +21,9 @@ function displayHeader(){
 
     var formattedPic = HTMLbioPic.replace("%data%", "images/javierFragaLinkedInPhoto.jpg");
     $("#topContacts").append(formattedPic);
+
+    var formattedWelcomeMessage = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
+    $("#topContacts").append(formattedWelcomeMessage);
 } 
 function displayWork(){
     for (job in work.jobs){
