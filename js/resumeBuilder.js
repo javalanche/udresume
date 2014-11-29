@@ -13,10 +13,12 @@ function displayHeader(){
     var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
     $("#topContacts").append(formattedGithub);
 
+    var formattedLinkedin = HTMLcontactGeneric.replace("%contact%", "linkedIn").replace("%data%", bio.contacts.linkedIn);
+    $("#topContacts").append(formattedLinkedin); 
+
     var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
     $("#topContacts").append(formattedTwitter);
-}
-function displayWork(){
+} function displayWork(){
     for (job in work.jobs){
 	$("#workExperience").append(HTMLworkStart);
 
@@ -55,7 +57,7 @@ var bio = {
 	"email" : "javier.s.fraga@gmail.com",
 	"github" : "javalanche",
 	"twitter" : "@jsfraga",
-	"linkedIn" : "http://www.linkedin.com/pub/javier-fraga/3b/25a/842/"	
+	"linkedIn" : "www.linkedin.com/pub/javier-fraga"	
     },
     "welcomeMessage" : "blah blah blah",
     "skills" : skills,
