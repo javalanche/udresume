@@ -18,7 +18,11 @@ function displayHeader(){
 
     var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
     $("#topContacts").append(formattedTwitter);
-} function displayWork(){
+
+    var formattedPic = HTMLbioPic.replace("%data%", "images/javierFragaLinkedInPhoto.jpg");
+    $("#topContacts").append(formattedPic);
+} 
+function displayWork(){
     for (job in work.jobs){
 	$("#workExperience").append(HTMLworkStart);
 
@@ -59,7 +63,7 @@ var bio = {
 	"twitter" : "@jsfraga",
 	"linkedIn" : "www.linkedin.com/pub/javier-fraga"	
     },
-    "welcomeMessage" : "blah blah blah",
+    "welcomeMessage" : "Electrical engineer with Bilingual MBA from top-tier program with international experience and experience with two world-class technology providers",
     "skills" : skills,
     "bioPic" : "images/javierFragaLinkedInPhoto.jpg"
 };
