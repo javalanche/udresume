@@ -9,6 +9,9 @@ function displayHeader(){
 
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
     $("#topContacts").append(formattedEmail);
+
+    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+    $("#topContacts").append(formattedTwitter);
 }
 function displayWork(){
     for (job in work.jobs){
