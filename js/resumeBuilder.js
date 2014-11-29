@@ -6,6 +6,9 @@ function displayHeader(){
 
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     $("#topContacts").append(formattedMobile);
+
+    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+    $("#topContacts").append(formattedEmail);
 }
 function displayWork(){
     for (job in work.jobs){
