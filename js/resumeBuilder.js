@@ -3,6 +3,9 @@ function displayHeader(){
     $('#header').prepend(formattedRole);
     var formattedName = HTMLheaderName.replace("%data%", bio.name);
     $('#header').prepend(formattedName);
+
+    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+    $("#topContacts").append(formattedMobile);
 }
 function displayWork(){
     for (job in work.jobs){
