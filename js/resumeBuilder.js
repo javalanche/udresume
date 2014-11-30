@@ -20,10 +20,16 @@ function displayHeader(){
     $("#topContacts").append(formattedTwitter);
 
     var formattedPic = HTMLbioPic.replace("%data%", "images/javierFragaLinkedInPhoto.jpg");
-    $("#topContacts").append(formattedPic);
+    $("#header").append(formattedPic);
 
     var formattedWelcomeMessage = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
-    $("#topContacts").append(formattedWelcomeMessage);
+    $("#header").append(formattedWelcomeMessage);
+
+    var formattedSkillsStart = HTMLskillsStart;
+    $("#header").append(formattedSkillsStart);
+
+    var formattedSkills = HTMLskills.replace("%data%", bio.skills);
+    $("#header").append(formattedSkills);
 } 
 function displayWork(){
     for (job in work.jobs){
