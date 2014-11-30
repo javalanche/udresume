@@ -28,7 +28,14 @@ function displayHeader(){
     var formattedSkillsStart = HTMLskillsStart;
     $("#header").append(formattedSkillsStart);
 
-    var formattedSkills = HTMLskills.replace("%data%", bio.skills);
+    var skillsHeader = bio.skills.sw.join(", ");
+    var formattedSkills = HTMLskills.replace("%data%", skillsHeader); 
+    $("#header").append(formattedSkills); 
+    skillsHeader = bio.skills.hw.join(", ");
+    formattedSkills = HTMLskills.replace("%data%", skillsHeader); 
+    $("#header").append(formattedSkills);
+    skillsHeader = bio.skills.business.join(", ");
+    formattedSkills = HTMLskills.replace("%data%", skillsHeader)  ; 
     $("#header").append(formattedSkills);
 } 
 function displayWork(){
@@ -73,7 +80,11 @@ var bio = {
 	"linkedIn" : "www.linkedin.com/pub/javier-fraga"	
     },
     "welcomeMessage" : "Electrical engineer with Bilingual MBA from top-tier program with international experience and experience with two world-class technology providers",
-    "skills" : skills,
+    "skills" : {
+	"sw" : ['Front End Web Design' , 'Data Science' , 'Operating Systems', 'Continuous Integration' , 'Test-Drive Development'  ], 
+	"hw" : ['Digital and Analog Circuit Design' , 'Verilog' ], 
+	"business" : [ 'Project Management' , 'Scrum Agile' ,'Finance' , 'Accounting' , 'Strategy' ] 
+    },
     "bioPic" : "images/javierFragaLinkedInPhoto.jpg"
 };
 console.log(bio.name);
