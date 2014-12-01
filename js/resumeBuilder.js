@@ -176,7 +176,7 @@ var education = {
 		"years" : "2003-2005"
 	    }
 	]
-};
+}
 
 //var online = {
 //    "classes" : [
