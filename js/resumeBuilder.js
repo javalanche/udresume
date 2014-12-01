@@ -54,6 +54,47 @@ function displayWork(){
 	$(".work-entry:last").append(formattedDescription);
     }
 }
+function displayProjects(){
+    for (project in projects.projects){
+	$("#projects").append(HTMLprojectStart);
+
+	var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+	$(".project-entry:last").append(formattedTitle);
+
+	var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+	$(".project-entry:last").append(formattedDates);
+
+	var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+	$(".project-entry:last").append(formattedDescription);
+
+	if (projects.projects[project].images.length > 0){
+	    for (image in projects.projects[project].images){
+		var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+		$(".project-entry:last").append(formattedImage);
+	    }
+	}
+    }
+}
+function displayEducation(){
+    for (school  in education.schools){
+	$("#education").append(HTMLschoolStart);
+
+	var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
+	$(".education-entry:last").append(formattedName);
+
+	var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+	$(".education-entry:last").append(formattedDegree);
+
+	var formattedDate = HTMLschoolDates.replace("%data%", education.schools[school].years);
+	$(".education-entry:last").append(formattedDate);
+
+	var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].city);
+	$(".education-entry:last").append(formattedLocation);
+
+	var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+	$(".education-entry:last").append(formattedMajor);
+    }
+}
 function inName(){
     name.name.trim().split(" ");
     console.log(name);
@@ -64,7 +105,7 @@ function inName(){
 }
 $('#main').append(internationalizeButton);
 
-var skills = ['awesomeness' , 'programming' , 'teaching' , 'JS'];
+//var skills = ['awesomeness' , 'programming' , 'teaching' , 'JS'];
 //$('#main').append(skills);
 //$('#main').append(skills[0]);
 
@@ -150,30 +191,11 @@ var projects = {
 	}
     ]
 }
-projects.display = function(){
-    for (project in projects.projects){
-	$("#projects").append(HTMLprojectStart);
 
-	var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-	$(".project-entry:last").append(formattedTitle);
-
-	var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-	$(".project-entry:last").append(formattedDates);
-
-	var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-	$(".project-entry:last").append(formattedDescription);
-
-	if (projects.projects[project].images.length > 0){
-	    for (image in projects.projects[project].images){
-		var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
-		$(".project-entry:last").append(formattedImage);
-	    }
-	}
-    }
-}
 displayHeader();
 displayWork();
-//display();
+displayProjects();
+displayEducation();
 
 $(document).click(function(loc){
 	var x = loc.pageX;
