@@ -178,6 +178,53 @@ var education = {
 	]
 };
 
+//var online = {
+//    "classes" : [
+//          {
+//              "title" : "How to Use Git and GitHub",
+//              "school" : "Udacity",
+//              "date" : "2014",
+//              "url" : "tba.com"
+//          },
+//          {
+//              "title" : "Intro to HTML and CSS",
+//              "school" : "Udacity",
+//              "date" : "2014",
+//              "url" : "tba.com"
+//          },
+//          {
+//              "title" : "JavaScript Basics",
+//              "school" : "Udacity",
+//              "date" : "2014",
+//              "url" : "tba.com"
+//          },
+//          {
+//              "title" : "Intro to jQuery
+//              "school" : "Udacity",
+//              "date" : "2014",
+//              "url" : "tba.com"
+//          },
+//          {
+//              "title" : "Programming Foundations with Python"
+//              "school" : "Udacity",
+//              "date" : "2014",
+//              "url" : "tba.com"
+//          },
+//          {
+//              "title" : "Into to Data Science"
+//              "school" : "Udacity",
+//              "date" : "2014",
+//              "url" : "tba.com"
+//          },
+//          {
+//              "title" : "Intro to Machine Learning",
+//              "school" : "Udacity",
+//              "date" : "2014",
+//              "url" : "tba.com"
+//          }
+//      ]
+//}
+
 var projects = {
     "projects" : [
 	{
