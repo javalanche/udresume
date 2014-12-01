@@ -95,6 +95,15 @@ function displayEducation(){
 	$(".education-entry:last").append(formattedMajor);
     }
 }
+function displayOnline(){
+    $(".education-entry:last").append(HTMLonlineClasses);
+    for (_class  in online.classes){
+
+	var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", online.classes[_class].title);
+	$(".education-entry:last").append(formattedOnlineTitle);
+
+    }
+}
 function inName(){
     name.name.trim().split(" ");
     console.log(name);
@@ -178,52 +187,52 @@ var education = {
 	]
 }
 
-//var online = {
-//    "classes" : [
-//          {
-//              "title" : "How to Use Git and GitHub",
-//              "school" : "Udacity",
-//              "date" : "2014",
-//              "url" : "tba.com"
-//          },
-//          {
-//              "title" : "Intro to HTML and CSS",
-//              "school" : "Udacity",
-//              "date" : "2014",
-//              "url" : "tba.com"
-//          },
-//          {
-//              "title" : "JavaScript Basics",
-//              "school" : "Udacity",
-//              "date" : "2014",
-//              "url" : "tba.com"
-//          },
-//          {
-//              "title" : "Intro to jQuery
-//              "school" : "Udacity",
-//              "date" : "2014",
-//              "url" : "tba.com"
-//          },
-//          {
-//              "title" : "Programming Foundations with Python"
-//              "school" : "Udacity",
-//              "date" : "2014",
-//              "url" : "tba.com"
-//          },
-//          {
-//              "title" : "Into to Data Science"
-//              "school" : "Udacity",
-//              "date" : "2014",
-//              "url" : "tba.com"
-//          },
-//          {
-//              "title" : "Intro to Machine Learning",
-//              "school" : "Udacity",
-//              "date" : "2014",
-//              "url" : "tba.com"
-//          }
-//      ]
-//}
+var online = {
+    "classes" : [
+          {
+              "title" : "How to Use Git and GitHub",
+              "school" : "Udacity",
+              "date" : "2014",
+              "url" : "tba.com"
+          },
+          {
+              "title" : "Intro to HTML and CSS",
+              "school" : "Udacity",
+              "date" : "2014",
+              "url" : "tba.com"
+          },
+          {
+              "title" : "JavaScript Basics",
+              "school" : "Udacity",
+              "date" : "2014",
+              "url" : "tba.com"
+          },
+          {
+              "title" : "Intro to jQuery",
+              "school" : "Udacity",
+              "date" : "2014",
+              "url" : "tba.com"
+          },
+          {
+              "title" : "Programming Foundations with Python",
+              "school" : "Udacity",
+              "date" : "2014",
+              "url" : "tba.com"
+          },
+          {
+              "title" : "Into to Data Science",
+              "school" : "Udacity",
+              "date" : "2014",
+              "url" : "tba.com"
+          },
+          {
+              "title" : "Intro to Machine Learning",
+              "school" : "Udacity",
+              "date" : "2014",
+              "url" : "tba.com"
+          }
+      ]
+}
 
 var projects = {
     "projects" : [
@@ -243,7 +252,7 @@ displayHeader();
 displayWork();
 displayProjects();
 displayEducation();
-
+displayOnline();
 $(document).click(function(loc){
 	var x = loc.pageX;
 	var y = loc.pageY;
