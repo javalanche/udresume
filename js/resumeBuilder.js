@@ -80,10 +80,9 @@ function displayEducation(){
 	$("#education").append(HTMLschoolStart);
 
 	var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
-	$(".education-entry:last").append(formattedName);
-
 	var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
-	$(".education-entry:last").append(formattedDegree);
+	var formattedNameDegree = formattedName + formattedDegree;
+	$(".education-entry:last").append(formattedNameDegree);
 
 	var formattedDate = HTMLschoolDates.replace("%data%", education.schools[school].years);
 	$(".education-entry:last").append(formattedDate);
@@ -93,6 +92,21 @@ function displayEducation(){
 
 	var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
 	$(".education-entry:last").append(formattedMajor);
+    }
+}
+function displayOnline(){
+    $("#education").append(HTMLonlineClasses);
+    $("#education").append(HTMLschoolStart);
+    for (_class  in online.classes){
+
+	var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", online.classes[_class].title);
+	var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", online.classes[_class].school);
+	var formattedOnlineTitleSchool = formattedOnlineTitle + formattedOnlineSchool;
+	$(".education-entry:last").append(formattedOnlineTitleSchool);
+	var formattedOnlineDates = HTMLonlineDates.replace("%data%", online.classes[_class].date);
+	$(".education-entry:last").append(formattedOnlineDates);
+	var formattedOnlineURL = HTMLonlineURL.replace("%data%", online.classes[_class].url);
+	$(".education-entry:last").append(formattedOnlineURL);
     }
 }
 function inName(){
@@ -171,12 +185,59 @@ var education = {
 	    {
 		"name" : "The University of Texas at San Antonio",
 		"city" : "San Antonio, Texas",
-		"degree" : "BA",
+		"degree" : "Bachelor of Science",
 		"major" : "Electrical Engineering",
 		"years" : "2003-2005"
 	    }
 	]
-};
+}
+
+var online = {
+    "classes" : [
+          {
+              "title" : "How to Use Git and GitHub",
+              "school" : "Udacity",
+              "date" : "2014",
+              "url" : "tba.com"
+          },
+          {
+              "title" : "Intro to HTML and CSS",
+              "school" : "Udacity",
+              "date" : "2014",
+              "url" : "tba.com"
+          },
+          {
+              "title" : "JavaScript Basics",
+              "school" : "Udacity",
+              "date" : "2014",
+              "url" : "tba.com"
+          },
+          {
+              "title" : "Intro to jQuery",
+              "school" : "Udacity",
+              "date" : "2014",
+              "url" : "tba.com"
+          },
+          {
+              "title" : "Programming Foundations with Python",
+              "school" : "Udacity",
+              "date" : "2014",
+              "url" : "tba.com"
+          },
+          {
+              "title" : "Into to Data Science",
+              "school" : "Udacity",
+              "date" : "2014",
+              "url" : "tba.com"
+          },
+          {
+              "title" : "Intro to Machine Learning",
+              "school" : "Udacity",
+              "date" : "2014",
+              "url" : "tba.com"
+          }
+      ]
+}
 
 var projects = {
     "projects" : [
@@ -198,7 +259,7 @@ displayHeader();
 displayWork();
 displayProjects();
 displayEducation();
-
+displayOnline();
 $(document).click(function(loc){
 	var x = loc.pageX;
 	var y = loc.pageY;
