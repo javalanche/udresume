@@ -96,12 +96,12 @@ function displayEducation(){
     }
 }
 function displayOnline(){
-    $(".education-entry:last").append(HTMLonlineClasses);
+    $("#education").append(HTMLonlineClasses);
+    $("#education").append(HTMLschoolStart);
     for (_class  in online.classes){
 
 	var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", online.classes[_class].title);
 	$(".education-entry:last").append(formattedOnlineTitle);
-
     }
 }
 function inName(){
