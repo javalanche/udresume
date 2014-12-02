@@ -80,10 +80,9 @@ function displayEducation(){
 	$("#education").append(HTMLschoolStart);
 
 	var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
-	$(".education-entry:last").append(formattedName);
-
 	var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
-	$(".education-entry:last").append(formattedDegree);
+	var formattedNameDegree = formattedName + formattedDegree;
+	$(".education-entry:last").append(formattedNameDegree);
 
 	var formattedDate = HTMLschoolDates.replace("%data%", education.schools[school].years);
 	$(".education-entry:last").append(formattedDate);
@@ -101,7 +100,13 @@ function displayOnline(){
     for (_class  in online.classes){
 
 	var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", online.classes[_class].title);
-	$(".education-entry:last").append(formattedOnlineTitle);
+	var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", online.classes[_class].school);
+	var formattedOnlineTitleSchool = formattedOnlineTitle + formattedOnlineSchool;
+	$(".education-entry:last").append(formattedOnlineTitleSchool);
+	var formattedOnlineDates = HTMLonlineDates.replace("%data%", online.classes[_class].date);
+	$(".education-entry:last").append(formattedOnlineDates);
+	var formattedOnlineURL = HTMLonlineURL.replace("%data%", online.classes[_class].url);
+	$(".education-entry:last").append(formattedOnlineURL);
     }
 }
 function inName(){
@@ -180,7 +185,7 @@ var education = {
 	    {
 		"name" : "The University of Texas at San Antonio",
 		"city" : "San Antonio, Texas",
-		"degree" : "BA",
+		"degree" : "Bachelor of Science",
 		"major" : "Electrical Engineering",
 		"years" : "2003-2005"
 	    }
