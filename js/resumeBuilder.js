@@ -245,12 +245,7 @@ var projects = {
 	    "title" : "Udacity Front End Web Developer Nanodegree Project 1: Mockup to Website",
 	    "dates" : 2014,
 	    "description" : "developed simple responsive website that display images, description and links to the portfolio projects using bootstrap",
-	    "images" : [
-		"images/p1fullScreen.png",
-		"images/p1halfScreen.png",
-		"images/p1fourthScreena.png",
-		"images/p1fourthScreenb.png"
-		]
+	    "images" : [ "images/p1fullScreen.png", "images/p1halfScreen.png", "images/p1fourthScreena.png", "images/p1fourthScreenb.png" ]
 	}
     ]
 }
