@@ -87,7 +87,7 @@ function displayEducation(){
 	var formattedDate = HTMLschoolDates.replace("%data%", education.schools[school].years);
 	$(".education-entry:last").append(formattedDate);
 
-	var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].city);
+	var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
 	$(".education-entry:last").append(formattedLocation);
 
 	var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
@@ -117,7 +117,7 @@ function inName(){
 
     return name[0] + " " + name[1];
 }
-$('#main').append(internationalizeButton);
+$('#main').prepend(internationalizeButton);
 
 //var skills = ['awesomeness' , 'programming' , 'teaching' , 'JS'];
 //$('#main').append(skills);
@@ -128,6 +128,7 @@ var bio = {
     "age" : 32,
     "role" : "Developer (SW), Scrum Master, Project Manager",
     "contacts" : {
+	"location" : "Dallas, TX",
 	"mobile" : "+1 415 952 7314",
 	"email" : "javier.s.fraga@gmail.com",
 	"github" : "javalanche",
@@ -177,14 +178,14 @@ var education = {
     "schools" : [
 	    {
 		"name" : "IESE Business School",
-		"city" : "Barcelona, Spain",
+		"location" : "Barcelona, Spain",
 		"degree" : "Masters",
 		"major" : "MBA",
 		"years" : "2011-2013"
 	    },
 	    {
 		"name" : "The University of Texas at San Antonio",
-		"city" : "San Antonio, Texas",
+		"location" : "San Antonio, Texas",
 		"degree" : "Bachelor of Science",
 		"major" : "Electrical Engineering",
 		"years" : "2003-2005"
@@ -261,3 +262,5 @@ $(document).click(function(loc){
 
 	logClicks(x,y);
 });
+//google map
+$("#mapDiv").append(googleMap);
