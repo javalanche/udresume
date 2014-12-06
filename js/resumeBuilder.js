@@ -10,13 +10,13 @@ function displayHeader(){
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
     $("#topContacts").append(formattedEmail);
 
-    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github.name).replace("%url%", bio.contacts.github.url);
     $("#topContacts").append(formattedGithub);
 
     var formattedLinkedin = HTMLcontactGeneric.replace("%contact%", "linkedIn").replace("%data%", bio.contacts.linkedIn);
     $("#topContacts").append(formattedLinkedin); 
 
-    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter.name);
     $("#topContacts").append(formattedTwitter);
 
     var formattedPic = HTMLbioPic.replace("%data%", "images/javierFragaLinkedInPhoto.jpg");
@@ -131,8 +131,14 @@ var bio = {
 	"location" : "Dallas, TX",
 	"mobile" : "+1 415 952 7314",
 	"email" : "javier.s.fraga@gmail.com",
-	"github" : "javalanche",
-	"twitter" : "@jsfraga",
+	"github" : {
+	    "name" : "javalanche",
+	    "url" : "https://github.com/javalanche",
+	},
+	"twitter" : {
+	    "name" : "@jsfraga",
+	    "url" : "https://twitter.com/jsfraga",
+	},
 	"linkedIn" : "www.linkedin.com/pub/javier-fraga"	
     },
     "welcomeMessage" : "Electrical engineer with Bilingual MBA from top-tier program with international experience and experience with two world-class technology providers",
