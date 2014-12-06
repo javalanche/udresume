@@ -79,7 +79,7 @@ function displayEducation(){
     for (school  in education.schools){
 	$("#education").append(HTMLschoolStart);
 
-	var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
+	var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name).replace("%url%", education.schools[school].url);
 	var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
 	var formattedNameDegree = formattedName + formattedDegree;
 	$(".education-entry:last").append(formattedNameDegree);
@@ -181,21 +181,24 @@ var education = {
 		"location" : "Barcelona, Spain",
 		"degree" : "Masters",
 		"major" : "MBA",
-		"years" : "2011-2013"
+		"years" : "2011-2013",
+		"url" : "http://www.iese.edu/"
 	    },
 	    {
 		"name" : "ISE Business School",
 		"location" : "São Paulo, Brazil",
 		"degree" : "Masters Exchange Program",
 		"major" : "MBA Exchange Program",
-		"years" : "August-September 2012"
+		"years" : "August-September 2012",
+		"url" : "http://www.ise.org.br/"
 	    },
 	    {
 		"name" : "The University of Texas at San Antonio",
 		"location" : "San Antonio, Texas",
 		"degree" : "Bachelor of Science",
 		"major" : "Electrical Engineering",
-		"years" : "2003-2005"
+		"years" : "2003-2005",
+		"url" : "http://ece.utsa.edu"
 	    }
 	]
 }
