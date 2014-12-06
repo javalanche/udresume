@@ -162,14 +162,16 @@ var work = {
 	"title" : "Developer (SW), Scrum Master, Project Manager",
 	"dates" : "2014 - present",
 	"location" : "Dallas, TX, USA",
-	"description" : "fulltime employee working as an internal consultant in various projects in Responsive Web Design, API realization, and Cloud serving various roles as Project Manager, Scrum Master, and Developer"
+	"description" : "fulltime employee working as an internal consultant in various projects in Responsive Web Design, API realization, and Cloud serving various roles as Project Manager, Scrum Master, and Developer",
+	"url" : "https://www.att.com/"
     },
     {
 	"employer" : "Intel Corporation",
 	"title" : "Component Design Engineer (HW)",
 	"dates" : "2005 - 2011",
 	"location" : "Folsom, CA, USA",
-	"description" : "fulltime employee designing graphics processor units (GPU), specializing in Low-Power Digital Design" 
+	"description" : "fulltime employee designing graphics processor units (GPU), specializing in Low-Power Digital Design",
+	"url" : "http://www.intel.com/"
     }
 	]
 }
