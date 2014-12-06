@@ -16,7 +16,7 @@ function displayHeader(){
     var formattedLinkedin = HTMLcontactGeneric.replace("%contact%", "linkedIn").replace("%data%", bio.contacts.linkedIn);
     $("#topContacts").append(formattedLinkedin); 
 
-    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter.name);
+    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter.name).replace("%url%", bio.contacts.twitter.url);
     $("#topContacts").append(formattedTwitter);
 
     var formattedPic = HTMLbioPic.replace("%data%", "images/javierFragaLinkedInPhoto.jpg");
