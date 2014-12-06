@@ -184,6 +184,13 @@ var education = {
 		"years" : "2011-2013"
 	    },
 	    {
+		"name" : "ISE Business School",
+		"location" : "São Paulo, Brazil",
+		"degree" : "Exchange Program",
+		"major" : "MBA Exhange Program",
+		"years" : "August-September 2012"
+	    },
+	    {
 		"name" : "The University of Texas at San Antonio",
 		"location" : "San Antonio, Texas",
 		"degree" : "Bachelor of Science",
