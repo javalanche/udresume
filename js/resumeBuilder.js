@@ -13,7 +13,7 @@ function displayHeader(){
     var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github.name).replace("%url%", bio.contacts.github.url);
     $("#topContacts").append(formattedGithub);
 
-    var formattedLinkedin = HTMLcontactGeneric.replace("%contact%", "linkedIn").replace("%data%", bio.contacts.linkedIn);
+    var formattedLinkedin = HTMLcontactGeneric.replace("%contact%", "linkedIn").replace("%data%", bio.contacts.linkedIn.name).replace("%url%", bio.contacts.linkedIn.url);
     $("#topContacts").append(formattedLinkedin); 
 
     var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter.name).replace("%url%", bio.contacts.twitter.url);
@@ -139,7 +139,10 @@ var bio = {
 	    "name" : "@jsfraga",
 	    "url" : "https://twitter.com/jsfraga",
 	},
-	"linkedIn" : "www.linkedin.com/pub/javier-fraga"	
+	"linkedIn" : {
+	    "name" : "Javier Fraga",
+	    "url" : "https://www.linkedin.com/pub/javier-fraga"	
+	}
     },
     "welcomeMessage" : "Electrical engineer with Bilingual MBA from top-tier program with international experience and experience with two world-class technology providers",
     "skills" : {
