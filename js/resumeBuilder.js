@@ -58,7 +58,7 @@ function displayProjects(){
     for (project in projects.projects){
 	$("#projects").append(HTMLprojectStart);
 
-	var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+	var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title).replace("%url%", projects.projects[project].url);
 	$(".project-entry:last").append(formattedTitle);
 
 	var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
@@ -258,7 +258,8 @@ var projects = {
 	    "title" : "Udacity Front End Web Developer Nanodegree Project 1: Mockup to Website",
 	    "dates" : 2014,
 	    "description" : "developed simple responsive website that display images, description and links to the portfolio projects using bootstrap",
-	    "images" : [ "images/p1fullScreen.png", "images/p1halfScreen.png", "images/p1fourthScreena.png", "images/p1fourthScreenb.png" ]
+	    "images" : [ "images/p1fullScreen.png", "images/p1halfScreen.png", "images/p1fourthScreena.png", "images/p1fourthScreenb.png" ],
+	    "url" : "https://github.com/javalanche/P1MockUpToWebsite"
 	}
     ]
 }
