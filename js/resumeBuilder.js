@@ -117,7 +117,7 @@ function inName(){
 
     return name[0] + " " + name[1];
 }
-$('#main').append(internationalizeButton);
+$('#main').prepend(internationalizeButton);
 
 //var skills = ['awesomeness' , 'programming' , 'teaching' , 'JS'];
 //$('#main').append(skills);
