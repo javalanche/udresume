@@ -186,8 +186,8 @@ var education = {
 	    {
 		"name" : "ISE Business School",
 		"location" : "São Paulo, Brazil",
-		"degree" : "Exchange Program",
-		"major" : "MBA Exhange Program",
+		"degree" : "Masters Exchange Program",
+		"major" : "MBA Exchange Program",
 		"years" : "August-September 2012"
 	    },
 	    {
