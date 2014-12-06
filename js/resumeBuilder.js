@@ -99,14 +99,14 @@ function displayOnline(){
     $("#education").append(HTMLschoolStart);
     for (_class  in online.classes){
 
-	var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", online.classes[_class].title);
+	var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", online.classes[_class].title).replace("%url%", online.classes[_class].url);
 	var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", online.classes[_class].school);
 	var formattedOnlineTitleSchool = formattedOnlineTitle + formattedOnlineSchool;
 	$(".education-entry:last").append(formattedOnlineTitleSchool);
 	var formattedOnlineDates = HTMLonlineDates.replace("%data%", online.classes[_class].date);
 	$(".education-entry:last").append(formattedOnlineDates);
-	var formattedOnlineURL = HTMLonlineURL.replace("%data%", online.classes[_class].url);
-	$(".education-entry:last").append(formattedOnlineURL);
+//	var formattedOnlineURL = HTMLonlineURL.replace("%data%", online.classes[_class].url);
+//	$(".education-entry:last").append(formattedOnlineURL);
     }
 }
 function inName(){
@@ -211,43 +211,43 @@ var online = {
               "title" : "How to Use Git and GitHub",
               "school" : "Udacity",
               "date" : "2014",
-              "url" : "tba.com"
+              "url" : "https://www.udacity.com/course/ud775L"
           },
           {
               "title" : "Intro to HTML and CSS",
               "school" : "Udacity",
               "date" : "2014",
-              "url" : "tba.com"
+              "url" : "https://www.udacity.com/course/ud304-nd"
           },
           {
               "title" : "JavaScript Basics",
               "school" : "Udacity",
               "date" : "2014",
-              "url" : "tba.com"
+              "url" : "https://www.udacity.com/course/ud804-nd"
           },
           {
               "title" : "Intro to jQuery",
               "school" : "Udacity",
               "date" : "2014",
-              "url" : "tba.com"
+              "url" : "https://www.udacity.com/course/ud245"
           },
           {
               "title" : "Programming Foundations with Python",
               "school" : "Udacity",
               "date" : "2014",
-              "url" : "tba.com"
+              "url" : "https://www.udacity.com/course/ud036"
           },
           {
               "title" : "Into to Data Science",
               "school" : "Udacity",
               "date" : "2014",
-              "url" : "tba.com"
+              "url" : "https://www.udacity.com/course/ud359-nd"
           },
           {
               "title" : "Intro to Machine Learning",
               "school" : "Udacity",
               "date" : "2014",
-              "url" : "tba.com"
+              "url" : "https://www.udacity.com/course/ud120-nd"
           }
       ]
 }
