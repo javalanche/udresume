@@ -220,7 +220,7 @@ var online = {
               "title" : "How to Use Git and GitHub",
               "school" : "Udacity",
               "date" : "2014",
-              "url" : "https://www.udacity.com/course/ud775L"
+              "url" : "https://www.udacity.com/course/ud775"
           },
           {
               "title" : "Intro to HTML and CSS",
