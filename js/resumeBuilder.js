@@ -24,7 +24,7 @@ function displayHeader(){
     $("#topContacts").append(formattedTwitter);
     $("#footerContacts").append(formattedTwitter);
 
-    var formattedPic = HTMLbioPic.replace("%data%", "images/javierFragaLinkedInPhoto.jpg");
+    var formattedPic = HTMLbioPic.replace("%data%", bio.bioPic);
     $("#header").append(formattedPic);
 
     var formattedWelcomeMessage = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
@@ -115,10 +115,10 @@ function displayOnline(){
     }
 }
 function inName(){
-    name.name.trim().split(" ");
+    var name = bio.name.trim().split(" ");
     console.log(name);
     name[1] = name[1].toUpperCase();
-    name[0] = name[0].splice(0,1).toUpperCase() + name[0].splice(1).toLowerCase();
+    name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
 
     return name[0] + " " + name[1];
 }
@@ -156,6 +156,7 @@ var bio = {
 	"business" : [ 'Project Management' , 'Scrum Agile' ,'Finance' , 'Accounting' , 'Strategy' ] 
     },
     "bioPic" : "images/javierFragaLinkedInPhoto.jpg"
+   // "bioPic" : "images/fry.jpg"
 };
 console.log(bio.name);
 console.log(bio.age);
