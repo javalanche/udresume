@@ -6,18 +6,23 @@ function displayHeader(){
 
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     $("#topContacts").append(formattedMobile);
+    $("#footerContacts").append(formattedMobile);
 
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
     $("#topContacts").append(formattedEmail);
+    $("#footerContacts").append(formattedEmail);
 
     var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github.name).replace("%url%", bio.contacts.github.url);
     $("#topContacts").append(formattedGithub);
+    $("#footerContacts").append(formattedGithub);
 
     var formattedLinkedin = HTMLcontactGeneric.replace("%contact%", "linkedIn").replace("%data%", bio.contacts.linkedIn.name).replace("%url%", bio.contacts.linkedIn.url);
     $("#topContacts").append(formattedLinkedin); 
+    $("#footerContacts").append(formattedLinkedin); 
 
     var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter.name).replace("%url%", bio.contacts.twitter.url);
     $("#topContacts").append(formattedTwitter);
+    $("#footerContacts").append(formattedTwitter);
 
     var formattedPic = HTMLbioPic.replace("%data%", "images/javierFragaLinkedInPhoto.jpg");
     $("#header").append(formattedPic);
@@ -220,7 +225,7 @@ var online = {
               "title" : "How to Use Git and GitHub",
               "school" : "Udacity",
               "date" : "2014",
-              "url" : "https://www.udacity.com/course/ud775L"
+              "url" : "https://www.udacity.com/course/ud775"
           },
           {
               "title" : "Intro to HTML and CSS",
